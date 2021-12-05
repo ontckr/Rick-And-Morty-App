@@ -6,6 +6,10 @@
         <entry key="app/src/main/res/drawable/close_icon.xml" value="0.3635897435897436" />
         <entry key="app/src/main/res/layout-v28/activity_main.xml" value="0.353125" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/character_detail_episodes.xml" value="0.3482051282051282" />
+        <entry key="app/src/main/res/layout/character_detail_information.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/layout.xml" value="0.3536458333333333" />
+        <entry key="app/src/main/res/layout/loading_model.xml" value="0.25" />
       </map>
     </option>
   </component>

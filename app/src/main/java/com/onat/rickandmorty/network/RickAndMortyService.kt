@@ -1,8 +1,7 @@
-package com.onat.rickandmorty
+package com.onat.rickandmorty.network
 
-
+import com.onat.rickandmorty.network.GetCharacterByIdResponse
 import retrofit2.http.GET
-import retrofit2.Call
 import retrofit2.Response
 import retrofit2.http.Path
 

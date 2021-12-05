@@ -1,4 +1,7 @@
-package com.onat.rickandmorty
+package com.onat.rickandmorty.network
+
+import com.onat.rickandmorty.Location
+import com.onat.rickandmorty.Origin
 
 data class GetCharacterByIdResponse(
     val created: String,

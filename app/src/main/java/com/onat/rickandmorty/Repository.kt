@@ -1,5 +1,8 @@
 package com.onat.rickandmorty
 
+import com.onat.rickandmorty.network.GetCharacterByIdResponse
+import com.onat.rickandmorty.network.NetworkLayer
+
 class Repository {
 
     suspend fun getCharacterById(id: Int): GetCharacterByIdResponse? {

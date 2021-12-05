@@ -6,6 +6,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
+import com.airbnb.epoxy.EpoxyRecyclerView
 import com.squareup.picasso.Picasso
 
 class MainActivity : AppCompatActivity() {
@@ -14,29 +15,24 @@ class MainActivity : AppCompatActivity() {
         ViewModelProvider(this).get(SharedViewModel::class.java)
     }
 
+    private val epoxyController = CharacterDetailEpoxyController()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val nameTextView = findViewById<TextView>(R.id.name)
-        val statusTextView = findViewById<TextView>(R.id.status)
-        val speciesTextView = findViewById<TextView>(R.id.species)
-        val genderTextView = findViewById<TextView>(R.id.gender)
-        val profilePictureImageView = findViewById<ImageView>(R.id.image)
-
-        viewModel.getCharacter(3)
         viewModel.characterByIdData.observe(this){response ->
 
+            epoxyController.characterResponse = response
+
             if (response == null) {
-                Toast.makeText(this@MainActivity, "Error on request", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@MainActivity, "Request Error", Toast.LENGTH_SHORT).show()
                 return@observe
             }
-
-            nameTextView.text = response.name
-            statusTextView.text = response.status
-            speciesTextView.text = response.species
-            genderTextView.text = response.gender
-            Picasso.get().load(response.image).into(profilePictureImageView)
         }
+        viewModel.getCharacter(10)
+
+        val epoxyRecyclerView = findViewById<EpoxyRecyclerView>(R.id.epoxyRecyclerView)
+        epoxyRecyclerView.setControllerAndBuildModels(epoxyController)
     }
 }

@@ -1,4 +1,4 @@
-package com.onat.rickandmorty
+package com.onat.rickandmorty.network
 
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory

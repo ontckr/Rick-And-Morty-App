@@ -1,4 +1,4 @@
-package com.onat.rickandmorty
+package com.onat.rickandmorty.network
 
 import retrofit2.Response
 
