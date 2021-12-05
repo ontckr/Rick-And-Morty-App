@@ -3,9 +3,12 @@ package com.onat.rickandmorty
 
 import retrofit2.http.GET
 import retrofit2.Call
+import retrofit2.http.Path
 
 interface RickAndMortyService {
 
-    @GET("character/5")
-    fun getCharacterById(): Call<Any>
+    @GET("character/{id}")
+    fun getCharacterById(
+        @Path("id") characterId: Int
+    ): Call<GetCharacterByIdResponse>
 }
