@@ -7,7 +7,7 @@ import retrofit2.converter.moshi.MoshiConverterFactory
 
 object NetworkLayer {
 
-    val moshi = Moshi.Builder().addLast(KotlinJsonAdapterFactory()).build()
+    private val moshi = Moshi.Builder().addLast(KotlinJsonAdapterFactory()).build()
 
     private val retrofit: Retrofit = Retrofit.Builder()
         .baseUrl("https://rickandmortyapi.com/api/")

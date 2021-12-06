@@ -1,9 +1,9 @@
-package com.onat.rickandmorty
+package com.onat.rickandmorty.character
 
 import com.onat.rickandmorty.network.GetCharacterByIdResponse
 import com.onat.rickandmorty.network.NetworkLayer
 
-class Repository {
+class CharacterRepository {
 
     suspend fun getCharacterById(id: Int): GetCharacterByIdResponse? {
         val request = NetworkLayer.apiClient.getCharacterById(id)

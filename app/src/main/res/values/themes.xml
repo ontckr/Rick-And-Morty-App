@@ -22,4 +22,8 @@
         <item name="cornerFamily">rounded</item>
     </style>
 
+    <style name="homeCharacterPicture">
+        <item name="cornerSize">20%</item>
+    </style>
+
 </resources>

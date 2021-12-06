@@ -1,8 +1,11 @@
-package com.onat.rickandmorty
+package com.onat.rickandmorty.character
 
+import android.util.Log
 import com.airbnb.epoxy.EpoxyController
+import com.onat.rickandmorty.R
 import com.onat.rickandmorty.databinding.CharacterDetailEpisodesBinding
 import com.onat.rickandmorty.databinding.CharacterDetailInformationBinding
+import com.onat.rickandmorty.databinding.EpisodeModelBinding
 import com.onat.rickandmorty.helpers.LoadingEpoxyModel
 import com.onat.rickandmorty.helpers.ViewBindingKotlinModel
 import com.onat.rickandmorty.network.GetCharacterByIdResponse
@@ -41,6 +44,8 @@ class CharacterDetailEpoxyController: EpoxyController() {
             gender = characterResponse!!.gender,
             image = characterResponse!!.image
         ).id("info").addTo(this)
+
+        Log.i("character: " , characterResponse.toString())
     }
 
     data class CharacterDetailInformationEpoxyModel(
@@ -62,10 +67,10 @@ class CharacterDetailEpoxyController: EpoxyController() {
     }
 
     data class CharacterDetailEpisodesEpoxyModel(
-        val data: String
-    ): ViewBindingKotlinModel<CharacterDetailEpisodesBinding>(R.layout.character_detail_episodes) {
-        override fun CharacterDetailEpisodesBinding.bind() {
-            TODO("Not yet implemented")
+        val data: List<Any>
+    ): ViewBindingKotlinModel<EpisodeModelBinding>(R.layout.episode_model) {
+        override fun EpisodeModelBinding.bind() {
+            TODO()
         }
     }
 }

@@ -1,8 +1,5 @@
 package com.onat.rickandmorty.network
 
-import com.onat.rickandmorty.Location
-import com.onat.rickandmorty.Origin
-
 data class GetCharacterByIdResponse(
     val created: String,
     val episode: List<Any>,
@@ -16,4 +13,14 @@ data class GetCharacterByIdResponse(
     val status: String,
     val type: String,
     val url: String
-)
+) {
+    data class Location(
+        val name: String,
+        val url: String
+    )
+
+    data class Origin(
+        val name: String,
+        val url: String
+    )
+}

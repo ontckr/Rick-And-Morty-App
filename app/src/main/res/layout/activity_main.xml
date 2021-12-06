@@ -10,12 +10,12 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="0dp"
-    tools:context=".MainActivity">
+    tools:context=".character.CharacterActivity">
 
     <com.airbnb.epoxy.EpoxyRecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/epoxyRecyclerView"
+        android:id="@+id/epoxyRecyclerViewHome"
         android:orientation="vertical"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         />

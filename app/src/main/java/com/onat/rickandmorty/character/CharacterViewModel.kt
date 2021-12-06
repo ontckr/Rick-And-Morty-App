@@ -1,15 +1,16 @@
-package com.onat.rickandmorty
+package com.onat.rickandmorty.character
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.onat.rickandmorty.character.CharacterRepository
 import com.onat.rickandmorty.network.GetCharacterByIdResponse
 import kotlinx.coroutines.launch
 
-class SharedViewModel: ViewModel() {
+class CharacterViewModel: ViewModel() {
 
-    private val repository = Repository()
+    private val repository = CharacterRepository()
 
     private val _characterByIdData = MutableLiveData<GetCharacterByIdResponse>()
     val characterByIdData: LiveData<GetCharacterByIdResponse> = _characterByIdData
